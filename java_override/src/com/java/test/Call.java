@@ -1,4 +1,4 @@
-package java_test;
+package com.java.test;
 
 class Shape {
 

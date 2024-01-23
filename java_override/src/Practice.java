@@ -1,4 +1,4 @@
-import java_test.Box;
+import com.java.test.Box;
 
 public class Practice {
 

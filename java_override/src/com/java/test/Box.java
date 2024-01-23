@@ -1,4 +1,4 @@
-package java_test;
+package com.java.test;
 
 public class Box {
 	private String item;
