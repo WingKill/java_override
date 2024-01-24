@@ -26,7 +26,13 @@ public class CarTest {
 		}
 
 		Path file = Paths.get("C:\\Users\\601-16\\Documents\\Simple.txt");
-
+		String x = "wexryqzo";
+		x.length();
+		x.charAt(0);
+		
+		Solution xrr = new Solution();
+		System.out.println(xrr.solution("aukks", "wbqd", 5));
+		
 		BufferedWriter writer = null;
 		
 		try {
@@ -39,6 +45,35 @@ public class CarTest {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		
 	}
 
+}
+
+class Solution {
+    public String solution(String s, String skip, int index) {
+        String answer = "";
+        char sChar;
+        for(int i = 0; i < s.length(); i++){
+            sChar = s.charAt(i);
+            for(int j = 1; j <= index ; j++){                
+                sChar += 1;
+                for(int k = 0; k < skip.length(); k++){
+                    char skipChar = skip.charAt(k);
+                    if(sChar != skipChar){
+                        continue;
+                    }else if(sChar == skipChar){
+                        sChar += 1;            
+                    } 
+                } 
+            }     
+            
+            if(sChar > 'z'){
+                sChar = (char)(sChar - 'z' - 1 + 'a');
+            }  
+            answer += String.valueOf(sChar);
+        }
+        return answer;
+    }
 }
