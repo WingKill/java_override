@@ -6,7 +6,9 @@ public class WrapperMain {
 
 	public static void main(String[] args) {
 
-		int num1 = 10;
+		int num1 = 10;	
+		String x233 = "-213";
+		System.out.println(Integer.valueOf(x233));
 
 		Integer iObj = new Integer(10);
 		System.out.println(num1);
