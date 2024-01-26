@@ -2,19 +2,53 @@ package com.java.wrapper;
 
 import java.util.Scanner;
 
+class Person22{
+	private String name;
+	private int age;
+	public Person22(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	@Override
+	public String toString() {
+		// name : Lee  age : 29
+		return "name : " + name + "  age : " + age ;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Person22) {
+			Person22 person = (Person22) obj;
+			if(person.name.equals(this.name) && person.age == this.age)
+				return true;
+		}
+		return false;
+	}
+}
 public class TestMain {
 
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		String rotate = sc.nextLine();
-		String[] rotation = new String[rotate.length()];
-		for (int i = 0; i < rotate.length(); i++) {
-			String partialWord = rotate.substring(i) + rotate.substring(0, i);
-			rotation[i] = partialWord;
-			System.out.println(partialWord + "\n");
-		}
-		sc.close();
+//		Scanner sc = new Scanner(System.in);
+//		String rotate = sc.nextLine();
+//		String[] rotation = new String[rotate.length()];
+//		for (int i = 0; i < rotate.length(); i++) {
+//			String partialWord = rotate.substring(i) + rotate.substring(0, i);
+//			rotation[i] = partialWord;
+//			System.out.println(partialWord + "\n");
+//		}
+//		sc.close();
+		
+        Person22 p1 = new Person22("Lee", 29);
+        Person22 p2= new Person22("Lee", 29);
+        
+        Person22 p3= new Person22("Lee", 30);
+        
+        System.out.println(p1.equals(p2)); // true
+        System.out.println(p1.equals(p3)); // false
+        
+        System.out.println(p1); // name : Lee  age : 29
 		
 //		MyPoint p = new MyPoint(3, 50);
 //		MyPoint q = new MyPoint(4, 50);
